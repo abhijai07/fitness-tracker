@@ -13,7 +13,7 @@ import {
 } from "recharts";
 import "./App.css";
 
-const API = "http://127.0.0.1:8000";
+const API = "https://fitness-tracker-c160.onrender.com";
 const today = new Date().toISOString().split("T")[0];
 
 const exerciseOptions = {
