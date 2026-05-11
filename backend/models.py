@@ -57,6 +57,7 @@ class Exercise(Base):
     exercise_name = Column(String)
     machine_name = Column(String)
     muscle_targeted = Column(String)
+    exercise_note = Column(String)
 
 
 class WorkoutSet(Base):
