@@ -974,22 +974,21 @@ function App() {
             : exercise.exercise_name;
 
         return {
-          ...exercise,
-          exercise_name: finalExerciseName,
-          machine_name: finalExerciseName,
-          muscle_targeted:
-            exercise.muscle_targeted || muscleTargets[finalExerciseName] || "",
-          sets: exercise.sets
-            .filter((set) => set.reps && set.weight)
-            .map((set, index) => ({
-              ...set,
-              set_number: index + 1,
-              reps: Number(set.reps),
-              weight: Number(set.weight),
-              weight_unit: set.weight_unit || "lbs",
-            })),
-        };
-      }),
+  exercise_name: finalExerciseName,
+  machine_name: finalExerciseName,
+  muscle_targeted:
+    exercise.muscle_targeted || muscleTargets[finalExerciseName] || "",
+  exercise_note: exercise.exercise_note || "",
+  sets: exercise.sets
+    .filter((set) => set.reps && set.weight)
+    .map((set, index) => ({
+      set_number: index + 1,
+      reps: Number(set.reps),
+      weight: Number(set.weight),
+      weight_unit: set.weight_unit || "lbs",
+    })),
+};
+}),
     };
 
     if (!navigator.onLine) {
